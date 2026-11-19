@@ -305,3 +305,87 @@ footer p:last-child {
         flex-direction: column;
     }
 }
+
+/* PREMIUM HERO UPGRADE */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 10%;
+    background: #f4f4f4;
+}
+
+.hero-content {
+    max-width: 950px;
+}
+
+.hero-greeting {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 90px);
+    line-height: 1.05;
+    letter-spacing: -4px;
+    max-width: 900px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #777;
+}
+
+.hero .intro {
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 14px 25px;
+    border: 1px solid #222;
+    color: #222;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.secondary-button:hover {
+    background: #222;
+    color: #fff;
+}
+
+.hero-note {
+    margin-top: 65px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 75vh;
+        padding: 80px 7%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-note {
+        line-height: 2;
+    }
+}
