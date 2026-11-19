@@ -2522,3 +2522,33 @@ a {
         transition: none !important;
     }
 }
+/* HOME HIGHLIGHTS - CENTER ALIGNMENT */
+.highlights,
+.highlights-inner,
+.highlight-item {
+    text-align: center;
+}
+
+.highlights-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+}
+
+@media (max-width: 768px) {
+    .highlights-inner {
+        grid-template-columns: 1fr;
+    }
+}
