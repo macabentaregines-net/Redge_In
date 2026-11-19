@@ -2552,3 +2552,165 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* =====================================
+   HOMEPAGE — EDITORIAL APPROACH CARDS
+===================================== */
+
+.approach-section {
+    padding: 110px 7%;
+    background: #F8F6F1;
+    overflow: hidden;
+}
+
+.approach-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.approach-heading .eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #938779;
+}
+
+.approach-heading h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    color: #242321;
+    margin-bottom: 15px;
+}
+
+.approach-heading p {
+    color: #88847D;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.approach-flow {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    position: relative;
+}
+
+.approach-card {
+    min-height: 280px;
+    padding: 28px;
+    background: #FFFFFF;
+    border: 1px solid #E4E0D8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+}
+
+.approach-card:hover {
+    transform: translateY(-10px);
+    border-color: #A58F78;
+    box-shadow: 0 18px 40px rgba(36, 35, 33, 0.08);
+}
+
+.approach-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.approach-number {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 35px;
+    color: #B6AA9B;
+}
+
+.approach-symbol {
+    font-size: 22px;
+    color: #A58F78;
+    transition: transform 0.5s ease;
+}
+
+.approach-card:hover .approach-symbol {
+    transform: rotate(90deg);
+}
+
+.approach-card-content {
+    margin: 35px 0;
+}
+
+.approach-card-content h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(21px, 2vw, 27px);
+    font-weight: 400;
+    color: #242321;
+    margin-bottom: 12px;
+}
+
+.approach-card-content p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #88847D;
+    max-width: 230px;
+}
+
+.approach-bottom {
+    display: block;
+    padding-top: 17px;
+    border-top: 1px solid #EAE7E0;
+    color: #A09689;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .approach-flow {
+        gap: 14px;
+    }
+
+    .approach-card {
+        padding: 22px;
+        min-height: 260px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+    .approach-section {
+        padding: 75px 6%;
+    }
+
+    .approach-heading {
+        margin-bottom: 35px;
+    }
+
+    .approach-flow {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 440px;
+    }
+
+    .approach-card {
+        min-height: 215px;
+        padding: 24px;
+    }
+
+    .approach-card-content {
+        margin: 25px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .approach-card,
+    .approach-symbol {
+        transition: none;
+    }
+}
