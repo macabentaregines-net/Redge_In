@@ -417,3 +417,230 @@ footer {
         flex-direction: column;
     }
 }
+
+/* =========================================
+   EXPERTISE PAGE ANIMATIONS
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Moving marquee */
+.expertise-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    background: #171717;
+    color: #f7f6f2;
+    padding: 20px 0;
+    margin: 35px 0;
+    transform: rotate(-1deg) scale(1.02);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 35px;
+    animation: marqueeMove 28s linear infinite;
+}
+
+.marquee-track span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+@keyframes marqueeMove {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Expertise cards */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 45px;
+}
+
+.expertise-card {
+    position: relative;
+    padding: 35px;
+    background: #ffffff;
+    border: 1px solid #e8e5df;
+    border-radius: 22px;
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+    overflow: hidden;
+}
+
+.expertise-card::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: #dcd5ff;
+    border-radius: 50%;
+    right: -65px;
+    bottom: -65px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(23, 23, 23, 0.10);
+    border-color: #ff623e;
+}
+
+.expertise-card:hover::after {
+    opacity: 0.8;
+}
+
+.expertise-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff623e;
+}
+
+.expertise-icon {
+    font-size: 38px;
+    margin: 25px 0 15px;
+    transition: transform 0.35s ease;
+}
+
+.expertise-card:hover .expertise-icon {
+    transform: scale(1.2) rotate(-8deg);
+}
+
+.expertise-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.expertise-card p {
+    color: #666666;
+    line-height: 1.8;
+}
+
+.expertise-card ul {
+    padding-left: 20px;
+    margin: 22px 0;
+    color: #444444;
+    line-height: 2;
+}
+
+.expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.expertise-tags span {
+    background: #f1efff;
+    color: #51428d;
+    border-radius: 30px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Working philosophy */
+.philosophy-section {
+    background: #dcd5ff;
+    padding: 75px 8%;
+    border-radius: 28px;
+    margin: 60px auto;
+    width: 90%;
+}
+
+.philosophy-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.philosophy-content h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.philosophy-content h2 span {
+    color: #ff623e;
+}
+
+.philosophy-content p {
+    line-height: 1.9;
+}
+
+/* Call to action */
+.expertise-cta {
+    text-align: center;
+    background: #171717;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 65px 30px;
+}
+
+.expertise-cta h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    margin: 18px auto;
+    max-width: 650px;
+}
+
+.expertise-cta p:not(.eyebrow) {
+    color: #cccccc;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.expertise-cta .eyebrow {
+    color: #ff9a83;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .expertise-card {
+        padding: 25px;
+    }
+
+    .philosophy-section {
+        width: 92%;
+        padding: 45px 25px;
+    }
+
+    .marquee-track span {
+        font-size: 15px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
